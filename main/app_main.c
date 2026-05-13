@@ -16,6 +16,7 @@
 void app_main(void)
 {
     printf("Hello world!\n");
+    printf("This is first example working project that print this!\n");
 
     /* Print chip information */
     esp_chip_info_t chip_info;
