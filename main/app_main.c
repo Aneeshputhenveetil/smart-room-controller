@@ -13,6 +13,7 @@
 #include "esp_flash.h"
 #include "esp_system.h"
 #include "scheduler.h"
+#include "led.h"
 
 void app_main(void)
 {
@@ -50,9 +51,16 @@ void app_main(void)
     // printf("Restarting now.\n");
     // fflush(stdout);
     // esp_restart();
+    Led_Init();
+
     while(1)
     {
-        Scheduler_Run();
-        vTaskDelay(pdMS_TO_TICKS(10));
+        // Scheduler_Run();
+        // vTaskDelay(pdMS_TO_TICKS(10));
+
+        Led_Toggle();
+        printf("Running...\n");
+
+        vTaskDelay(pdMS_TO_TICKS(500));
     }
 }
